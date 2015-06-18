@@ -18,6 +18,7 @@
 # limitations under the License.
 #
 
+# Using a hash here adds uniq options
 default['motd-tail']['additional_text'] = nil
 
 # People like choices and not every user has knife access

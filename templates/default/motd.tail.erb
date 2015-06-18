@@ -26,4 +26,8 @@ Last Run: <%= ::Time.now %>
 
 ***
 
-<%= node['motd-tail']['additional_text'] %>
+<%if node['motd-tail']['additional_text'] %>
+<% node['motd-tail']['additional_text'].each_pair do |key, message| -%>
+<%= key%>: <%= message%>
+<% end -%>
+<% end -%>

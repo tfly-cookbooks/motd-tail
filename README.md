@@ -45,6 +45,44 @@ For example,
 
     Additional text here when `node['motd-tail']['additional_text']` present.
 
+
+Set additional_text in a role:
+
+    "default_attributes": {
+      "motd-tail": {
+        "additional_text": {
+           "ROLE_MESSAGE": "All servers with this role will have this message."
+        }
+      }
+    },
+
+
+Set additional_text directly on a node:
+
+    "default_attributes": {
+      "motd-tail": {
+        "additional_text": {
+           "ANOTHER_MESSAGE": "The node with this set will have this message."
+        }
+      }
+    },
+
+
+With both of these set motd-tail will look like this:
+
+    % ssh myserver.int.example.org
+    ***
+    Chef-Client - myserver.int.example.org
+    ubuntu
+    samba_server
+    netatalk_server
+    munin_server
+    rsyslog_server
+    ***
+    
+    ROLE_MESSAGE": All servers with this role will have this message.
+    ANOTHER_MESSAGE: The node with this set will have this message.
+
 Testing
 =====
 
